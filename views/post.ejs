@@ -17,7 +17,7 @@
       <!-- artical header -->
       <h1 class="text-primary"><%- article.title %></h1>
       <div class="d-flex flex-row text-secondary small">
-        <div class="p-2"><i class="fa fa-user-o" aria-hidden="true"></i> 卡斯伯</div>
+        <div class="p-2"><i class="fa fa-user-o" aria-hidden="true"></i> Justin</div>
         <div class="p-2"><%= moment(article.update_time*1000).format('YYYY/MM/DD'); %></div>
         <div class="p-2"><i class="fa fa-tag" aria-hidden="true"></i>
           <a href="" class="text-info">
@@ -32,14 +32,6 @@
       <article class="text-dark post mb-4">
         <%- article.content %>
       </article>
-      <!-- 留言 -->
-      <div class="card mb-3">
-        <div class="card-body">
-          <div id="disqus_thread">
-            <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-          </div>
-        </div>
-      </div>
 
     </div>
   </div>
