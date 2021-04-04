@@ -1,0 +1,15 @@
+{
+    "extends": "airbnb-base",
+    "plugins": [
+        "import"
+    ],
+    "rules": {
+        "prefer-destructuring": [
+            "error",
+            {
+                "array": false,
+                "object": false
+            }
+        ]
+    }
+}
