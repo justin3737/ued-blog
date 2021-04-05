@@ -37,7 +37,7 @@ router.get('/', (req, res) => {
 
 router.get('/archives/:category', (req, res) => {
   const currentPage = Number.parseInt(req.query.page, 10) || 1;
-  const categoryPath = req.param('category');
+  const categoryPath = req.params.category;
   let categories = {};
   let categoryId = '';
   categoriesRef.once('value').then((snapshot) => {
@@ -64,7 +64,7 @@ router.get('/archives/:category', (req, res) => {
 });
 
 router.get('/post/:id', (req, res) => {
-  const id = req.param('id');
+  const id = req.params.id;
   let categories = {};
   categoriesRef.once('value').then((snapshot) => {
     categories = snapshot.val();

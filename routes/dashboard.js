@@ -64,13 +64,15 @@ router.get('/article/create', (req, res) => {
 
 router.get('/article/:id', (req, res) => {
   const messages = req.flash('error');
-  const id = req.param('id');
+  const id = req.params.id;
   let categories = {};
   categoriesRef.once('value').then((snapshot) => {
     categories = snapshot.val();
     return articlesRef.child(id).once('value');
   }).then((snapshot) => {
     const article = snapshot.val();
+    console.log('----------------------')
+    console.log(article)
     res.render('dashboard/article', {
       title: 'Express',
       currentPath: '/article/',
@@ -116,14 +118,14 @@ router.post('/article/create', (req, res) => {
 
 router.post('/article/update/:id', (req, res) => {
   const data = req.body;
-  const id = req.param('id');
+  const id = req.params.id;
   articlesRef.child(id).update(data).then(() => {
-    res.redirect(`/dashboard/article/${data.id}`);
+    res.redirect(`/dashboard/article/${id}`);
   });
 });
 
 router.delete('/article/:id', (req, res) => {
-  const id = req.param('id');
+  const id = req.params.id;
   articlesRef.child(id).remove().then(() => {
     res.send({
       success: true,
@@ -194,7 +196,7 @@ router.post('/categories/create', (req, res) => {
 
 // Delete
 router.post('/categories/delete/:id', (req, res) => {
-  const id = req.param('id');
+  const id = req.params.id;
   categoriesRef.child(id).remove();
   req.flash('error', '欄位已經被刪除');
   res.redirect('/dashboard/categories');
