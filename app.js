@@ -39,7 +39,12 @@ const authChecker = (req, res, next) => {
 
 app.use('/auth', auth);
 app.use('/', index);
-app.use('/dashboard', authChecker, dashboard);
+if (app.get('env') === 'development'){
+  app.use('/dashboard', dashboard);
+} else {
+  app.use('/dashboard', authChecker, dashboard);
+}
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
