@@ -71,8 +71,6 @@ router.get('/article/:id', (req, res) => {
     return articlesRef.child(id).once('value');
   }).then((snapshot) => {
     const article = snapshot.val();
-    console.log('----------------------')
-    console.log(article)
     res.render('dashboard/article', {
       title: 'Express',
       currentPath: '/article/',
