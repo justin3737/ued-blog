@@ -26,12 +26,10 @@
     <label for="title">請輸入標題</label>
     <input type="text" id="title" class="form-control" name="title" placeholder="標題" value="<%= article.title || '' %>">
     <hr>
-    <textarea name="content" id="editor" class="form-control">
+    <div id="editor">
+      <div id="toolbar-container"></div>
       <%= article.content || '' %>
-    </textarea>
-    <script>
-			CKEDITOR.replace( 'content' );
-		</script>
+    </div>
   </div>
   <div class="col-md-3">
 
