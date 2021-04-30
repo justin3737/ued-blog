@@ -1,0 +1,14 @@
+{
+  "rules": {
+    "articles": {
+      ".read": true,
+      ".write": true
+    },
+    "categories": {
+      ".read": true,
+      ".write": true
+    },
+    ".read": false,
+    ".write": false
+  }
+}
