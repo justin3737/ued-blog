@@ -46,7 +46,6 @@ a {
   justify-content: space-between;
   -webkit-box-align: center;
   -ms-flex-align: center;
-  align-items: center;
 }
 
 .hamburger-wrap {
@@ -117,7 +116,6 @@ a {
   }
   .header-container {
     width: 100%;
-    padding: 24px 20px;
   }
   .hamburger-wrap {
     display: block;
@@ -125,12 +123,40 @@ a {
     width: 24px;
     cursor: pointer;
     flex-shrink: 0;
-  }  
+    position: absolute;
+    top: 32px;
+    right: 24px;
+  }
+
   .logo {
     padding: 0;
     width: 100%;
   }
+
   .list-menu {
     display: none;
   }
+
+  .header-container.is-open {
+    overflow: hidden;
+    height: 100vh;
+    -webkit-transition: height .3s ease-in;
+    transition: height .3s ease-in;
+  }
+
+  .header-container.is-open .list-menu {
+    display: block;
+    position: absolute;
+    top: 70px;
+    width: calc(100% - 40px);
+    right: 20px;
+    -webkit-transition: all .3s ease-in;
+    transition: all .3s ease-in;
+  }
+  .list-menu li a {
+    text-align: right;
+    line-height: 40px;
+  }
+
 }
+
