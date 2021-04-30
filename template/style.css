@@ -18,9 +18,6 @@ body, input, button {
  font-family: Inter,Helvetica,Arial,sans-serif;
 }
 
-button {
- cursor: pointer;
-}
 
 header {
   display: block;
@@ -32,14 +29,58 @@ a {
   cursor: pointer;
 }
 
-.header {
+.wrapper {
+  padding: 20px;
+  min-height: 100vh;
+}
+
+.header-container {
   position: fixed;
   top: 0;
   z-index: 100;
-  padding: 24px 0;
-  width: 100%;
+  padding: 24px;
+  width: calc(100% - 40px);
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 
 .logo {
   padding: 0 16px;
+  font-size: 18px;
+  line-height: 36px;
+}
+
+.list-menu {
+  flex-shrink: 0;
+  z-index: 100;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.list-menu li {
+  list-style: none;
+}
+
+.list-menu li a {
+  display: block;
+  margin: 0 15px;
+  color: #666;
+  letter-spacing: 1px;
+  font-size: 14px;
+  font-weight: 500;
+  -webkit-transition: all .3s ease-in-out;
+  line-height: 36px;
+  opacity: .4;
+  text-decoration: none;
+}
+
+.list-menu li a:hover {
+  opacity: 1;
 }
