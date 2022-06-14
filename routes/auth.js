@@ -5,7 +5,7 @@ const router = express.Router();
 
 router.get('/signup', (req, res) => {
   const messages = req.flash('error');
-  res.render('dashboard/signup', {
+  res.render('auth/signup', {
     messages,
     hasErrors: messages.length > 0,
   });
@@ -13,7 +13,7 @@ router.get('/signup', (req, res) => {
 
 router.get('/signin', (req, res) => {
   const messages = req.flash('error');
-  res.render('dashboard/signin', {
+  res.render('auth/signin', {
     messages,
     hasErrors: messages.length > 0,
   });
