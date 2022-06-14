@@ -1,4 +1,4 @@
-# Justin Image Blog
+# Ued Blog
 
 ## 啟用方法
 
@@ -7,7 +7,7 @@
 3. 執行 `npm start`
 
 ## 技術
-- 使用 node.js express 
+- 使用 node.js express
 - 使用 ejs 做為樣版引擎
 - 使用 QuillJS 編輯器
 - 使用 Firebase 做文章字料庫
